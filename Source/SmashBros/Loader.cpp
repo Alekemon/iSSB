@@ -87,6 +87,9 @@ namespace SmashBros
 			
 			case Global::CHAR_LINK:
 			return "Link";
+
+			case Global::CHAR_RANDOM:
+			return "Random";
 		}
 	}
 	
@@ -102,6 +105,7 @@ namespace SmashBros
 	
 	Player* CharacterLoader::createPlayer(float x1, float y1, byte playerNo, byte team,int charNum)
 	{
+		int randomChar;
 		Player*p = null;
 		Console::WriteLine((String)"creating character " + charNum);
 		switch(charNum)
@@ -134,6 +138,33 @@ namespace SmashBros
 			case Global::CHAR_LINK:
 			p = new Link(x1,y1,playerNo,team);
 			p->charNo = Global::CHAR_LINK;
+
+			case Global::CHAR_RANDOM:
+			randomChar = rand() % 6 + 1;
+			if (randomChar == 1) {
+				p = new Mario(x1, y1, playerNo, team);
+				p->charNo = Global::CHAR_MARIO;
+			};
+			if (randomChar == 2) {
+				p = new Ichigo(x1, y1, playerNo, team);
+				p->charNo = Global::CHAR_ICHIGO;
+			};
+			if (randomChar == 3) {
+				p = new Sonic(x1, y1, playerNo, team);
+				p->charNo = Global::CHAR_SONIC;
+			};
+			if (randomChar == 4) {
+				p = new Fox(x1, y1, playerNo, team);
+				p->charNo = Global::CHAR_FOX;
+			};
+			if (randomChar == 5) {
+				p = new Pikachu(x1, y1, playerNo, team);
+				p->charNo = Global::CHAR_PIKACHU;
+			};
+			if (randomChar == 6) {
+				p = new Link(x1, y1, playerNo, team);
+				p->charNo = Global::CHAR_LINK;
+			};
 		}
 		return p;
 	}
