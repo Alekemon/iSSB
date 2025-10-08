@@ -93,7 +93,7 @@ namespace SmashBros
 		static const int CHAR_FOX = 4;
 		static const int CHAR_PIKACHU = 5;
 		static const int CHAR_LINK = 6;
-		static const int CHAR_RANDOM = 7;
+		static const int CHAR_RANDOM = totalCharacters;
 		
 		//STAGE CONSTANTS
 		static const int STAGE_FRACTALSTAGE = 0;
