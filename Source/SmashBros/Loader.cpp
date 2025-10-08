@@ -108,7 +108,7 @@ namespace SmashBros
 		Player*p = null;
 		Console::WriteLine((String)"creating character " + charNum);
 		if (charNum == Global::CHAR_RANDOM) {
-			charNum = rand() % 6 + 1;
+			charNum = rand() % (Global::totalCharacters - 1) + 1;
 		};
 		switch(charNum)
 		{
