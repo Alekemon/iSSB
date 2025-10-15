@@ -109,6 +109,11 @@ namespace SmashBros
 		foreground->addAnimation(new Animation("normal", 4, "Images/Game/Stages/WhompFortress/bgplatform.png"));
 		foreground->changeAnimation("normal", FORWARD);
 		addForeground(foreground);
+		
+		foreground = new GameElement(1, 25);
+		foreground->addAnimation(new Animation("normal", 4, "Images/Game/Stages/WhompFortress/fg.png"));
+		foreground->changeAnimation("normal", FORWARD);
+		addForeground(foreground);
 	}
 	
 	void WhompFortress::loadHangPoints()
